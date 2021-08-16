@@ -1,7 +1,10 @@
 import { PrivateValueStore } from '@react-navigation/native';
 import React from 'react';
 import { View,Text,Image,TouchableOpacity,StyleSheet } from 'react-native';
-
+import MainText from './MainText';
+import MinorText from './MinorText';
+import ProfileCircle from './ProfileCircle';
+import ListItem from './ListItem';
 
 export default function ContactModel({item}){
     return(
@@ -10,14 +13,14 @@ export default function ContactModel({item}){
       onPress={() => console.log('clicked!')}
       
       >
-      <View style={styles.item}>
-        <View style={styles.item}>
-        <Image source={require('../../assets/profile3.png')} style={styles.profilePicStyle}/>
+      <ListItem >
+        <ListItem style={styles.item}>
+        <ProfileCircle imageSource={require('../../assets/profile3.png')} />
         <View style={styles.infoSection}>
-        <Text style={styles.MainStyle}>{item.title}</Text>
-        <Text style={styles.MinorStyle}>{item.subtitle}</Text>
+        <MainText text={item.title}/>
+        <MinorText text={item.subtitle}/>
         </View>
-        </View>
+        </ListItem>
         <View style={styles.notifications}>
             
             <Text style={styles.dateNotifier}>3/10/14</Text>
@@ -26,25 +29,13 @@ export default function ContactModel({item}){
             <Text style={styles.talksText}>3</Text>
             </View>
         </View>
-      </View>
+      </ListItem>
     </TouchableOpacity>
     )
 }
 
 const styles= StyleSheet.create({
-    item : {
-        height : 80,
-        flexDirection : 'row',
-        justifyContent :'space-between',
-        backgroundColor : 'white',
-        marginVertical : 10,
-        marginLeft: 5
-
-    },
-    MainStyle:{
-       fontWeight : 'bold',
-       fontSize : 18
-    },
+    
     dateNotifier:{
         color : 'green',
         height : 20,
@@ -65,11 +56,10 @@ const styles= StyleSheet.create({
     notifications :{
            flexDirection  : 'column',
            alignItems : 'center',
+           justifyContent :'space-between',
+           marginVertical : 15,
            height: 25,
            marginRight : 10
-    },
-    MinorStyle:{
-      fontSize : 14
     },
     seprator :{
         height : 20,
@@ -77,15 +67,8 @@ const styles= StyleSheet.create({
     },
     infoSection:{
         flexDirection : 'column',
+        justifyContent : 'space-between',
         backgroundColor : 'white',
         marginLeft : 10
-    },
-    profilePicStyle : {
-        height : 80,
-        width : 80,
-        resizeMode : 'cover',
-        borderRadius : 40,
-        
-
     }
 })
