@@ -1,3 +1,3 @@
 # WhatsApp Clone Under Process..
 
-- ![CALLS_SCREEN](https://github.com/SalikSayyed/WhatsAppClone/blob/main/assets/ChatsScreen.png = 250x400)
+<img src="https://github.com/SalikSayyed/WhatsAppClone/blob/main/assets/ChatsScreen.png" width="100" height="auto">
