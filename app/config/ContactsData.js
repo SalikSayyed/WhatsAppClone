@@ -2,11 +2,6 @@ const data = [
     {
         title : "some message",
         subtitle : "some practice",
-        id : 1
-    },
-    {
-        title : "some message",
-        subtitle : "some practice",
         id : 2
     },
     {

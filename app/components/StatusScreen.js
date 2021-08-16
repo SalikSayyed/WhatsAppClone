@@ -1,7 +1,7 @@
 import { PrivateValueStore } from '@react-navigation/native';
 import React from 'react';
 import { View,Text,StyleSheet,Button, SafeAreaView, FlatList } from 'react-native';
-import ContactsData from '../config/ContactsData';
+import StatusData from '../config/StatusData';
 import ListItem from './models/ListItem';
 import MainText from './models/MainText';
 import MinorText from './models/MinorText';
@@ -11,7 +11,7 @@ export default function ContactScreen({navigation}){
    return(
        <SafeAreaView style={{backgroundColor : 'white'}}>
            <FlatList 
-           data={ContactsData}
+           data={StatusData}
            key={({item})=>item.key}
            renderItem = {({item})=>{
             return(
